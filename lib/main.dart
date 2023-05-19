@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pga_experience/pages/golfers_page.dart';
-import 'package:pga_experience/pages/tournaments_page.dart';
+import 'package:pga_experience/pages/home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,63 +23,7 @@ class MyApp extends StatelessWidget {
           surfaceTintColor: Colors.lightGreen[900],
         ),
       ),
-      home: NavigationExample(),
-    );
-  }
-}
-
-class NavigationExample extends StatefulWidget {
-  const NavigationExample({super.key});
-
-  @override
-  State<NavigationExample> createState() => _NavigationExampleState();
-}
-
-class _NavigationExampleState extends State<NavigationExample> {
-  int currentPageIndex = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: NavigationBar(
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-        selectedIndex: currentPageIndex,
-        destinations: const <Widget>[
-          NavigationDestination(
-            selectedIcon: Icon(Icons.golf_course),
-            icon: Icon(Icons.golf_course_outlined),
-            label: 'Tournaments',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.groups),
-            icon: Icon(Icons.groups_outlined),
-            label: 'Golfers',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.star_rounded),
-            icon: Icon(Icons.star_outline_rounded),
-            label: 'Favorites',
-          ),
-        ],
-      ),
-      body: <Widget>[
-        Container(
-          alignment: Alignment.center,
-          child: const TournamentsPage(title: 'Tournaments'),
-        ),
-        Container(
-          alignment: Alignment.center,
-          child: const GolfersPage(title: 'Golfers'),
-        ),
-        Container(
-          alignment: Alignment.center,
-          child: const GolfersPage(title: 'Favorite Golfers'),
-        ),
-      ][currentPageIndex],
+      home: HomePage(),
     );
   }
 }

@@ -9,6 +9,12 @@ class GolfersPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.filter_list),
+          )
+        ],
       ),
       body: Center(
         child: Text('List of Golfers'),
