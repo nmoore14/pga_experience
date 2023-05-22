@@ -12,9 +12,29 @@ class NavDestination {
   final Widget page;
 }
 
+const List<NavDestination> destinations = <NavDestination>[
+  NavDestination(
+    'Golfers',
+    Icon(Icons.groups_outlined),
+    Icon(Icons.groups),
+    GolfersPage(title: 'Golfers'),
+  ),
+  NavDestination(
+    'Tournaments',
+    Icon(Icons.groups_outlined),
+    Icon(Icons.groups),
+    TournamentsPage(title: 'Tournaments'),
+  ),
+  NavDestination(
+    'Club House',
+    Icon(Icons.groups_outlined),
+    Icon(Icons.groups),
+    ClubhousePage(title: 'My Club House'),
+  ),
+];
+
 class MobileBottom extends StatefulWidget {
-  final List<NavDestination> navDestinations;
-  const MobileBottom({super.key, required this.navDestinations});
+  const MobileBottom({super.key});
 
   @override
   State<MobileBottom> createState() => _MobileBottomState();
@@ -33,7 +53,7 @@ class _MobileBottomState extends State<MobileBottom> {
           });
         },
         selectedIndex: currentPageIndex,
-        destinations: navDestinations.map(
+        destinations: destinations.map(
           (NavDestination destination) {
             return NavigationDestination(
               icon: destination.icon,

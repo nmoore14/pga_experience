@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pga_experience/pages/home_page.dart';
+import 'package:pga_experience/pages/login_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
           surfaceTintColor: Colors.lightGreen[900],
         ),
       ),
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }
